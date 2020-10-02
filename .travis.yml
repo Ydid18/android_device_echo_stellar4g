@@ -13,7 +13,7 @@ services:
 before_install:
   - docker pull fr3akyphantom/droid-builder:latest
 before_script:
-  - cd $HOME && sudo mkdir twrp
+  - cd $HOME && mkdir twrp
   # download the TWRP Compressed Source Files from PhantomZone54's Release
   # Uncomment & Use below line If Building for Lollipop-based Devices
   # - TWRP_SOURCE="https://github.com/PhantomZone54/twrp_sources_norepo/releases/download/v3.3.1-20200222/MinimalOmniRecovery-twrp-5.1-norepo-20200222.tar.xz"
