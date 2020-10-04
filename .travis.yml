@@ -30,7 +30,7 @@ script:
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g)  -v "${HOME}/.ccache:/srv/ccache:rw,z" -v "$(pwd):/home/builder/twrp/:rw,z" fr3akyphantom/droid-builder bash << EOF
     cd home/builder/twrp/
-    source build/envsetup.sh
+    sudo source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
     BUILD_FLAVOR="userdebug"
     lunch omni_Stellar_4G-${BUILD_FLAVOR}
