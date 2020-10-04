@@ -12,7 +12,6 @@ services:
   - docker
 before_install:
   - docker pull fr3akyphantom/droid-builder:latest
-  - chmod +x envsetup.sh
 before_script:
   - cd $HOME && mkdir twrp
   # download the TWRP Compressed Source Files from PhantomZone54's Release
@@ -31,7 +30,8 @@ script:
   - |
     docker run --rm -i -e USER_ID=$(id -u) -e GROUP_ID=$(id -g)  -v "${HOME}/.ccache:/srv/ccache:rw,z" -v "$(pwd):/home/builder/twrp/:rw,z" fr3akyphantom/droid-builder bash << EOF
     cd home/builder/twrp/
-    sudo source build/envsetup.sh
+    chmod +x build/envsetup.sh
+    source build/envsetup.sh
     # Choose build flavor as "eng" or "userdebug"
     BUILD_FLAVOR="userdebug"
     lunch omni_Stellar_4G-${BUILD_FLAVOR}
