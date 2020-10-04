@@ -12,8 +12,7 @@ services:
   - docker
 before_install:
   - sudo docker pull fr3akyphantom/droid-builder:latest
-  - sudo mkdir -p /home/builder/twrp/out
-  - sudo chmod a+rw /home/builder/twrp/out
+  - sudo chmod a+rw /home/builder/twrp/
 before_script:
   - cd $HOME && mkdir twrp
   # download the TWRP Compressed Source Files from PhantomZone54's Release
