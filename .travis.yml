@@ -13,6 +13,7 @@ services:
 before_install:
   - docker pull fr3akyphantom/droid-builder:latest
   - cd $HOME && mkdir twrp
+  - sudo chown -R root twrp
   - chmod 777 twrp
   # download the TWRP Compressed Source Files from PhantomZone54's Release
   # Uncomment & Use below line If Building for Lollipop-based Devices
